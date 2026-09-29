@@ -13,6 +13,8 @@ services:
       - "5432:5432"
     networks:
       - s-network
+    volumes:
+      - postgres-s-data:/var/lib/postgresql/data
 
 
   student-app:
@@ -34,4 +36,7 @@ services:
 networks:
   s-network:
     driver: bridge
+
+volumes:
+  postgres-s-data:
 
