@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:15
+    container_name: student-db
+    environment:
+      POSTGRES_DB: Demo
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5432:5432"
+    networks:
+      - s-network
+
+
+  student-app:
+    build: .
+    container_name: student-app
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/Demo
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 123456
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    ports:
+      - "8080:8080"
+    networks:
+      - s-network
+    restart: always
+
+networks:
+  s-network:
+    driver: bridge
+
