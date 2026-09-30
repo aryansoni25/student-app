@@ -1,4 +1,4 @@
-INSERT INTO student (name, age) VALUES ('Navin', 20);
-INSERT INTO student (name, age) VALUES ('Kiran', 22);
-INSERT INTO student (name, age) VALUES ('Harsh', 30);
-INSERT INTO student (name, age) VALUES ('Sushil', 12);
+INSERT INTO student (name, age) VALUES ('Aryan', 21);
+INSERT INTO student (name, age) VALUES ('Keshav', 22);
+INSERT INTO student (name, age) VALUES ('Aditya', 20);
+INSERT INTO student (name, age) VALUES ('Utpal', 22);
